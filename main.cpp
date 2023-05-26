@@ -11,7 +11,7 @@
 
 //membership will be valid for 10203, 10207,20204,56009,45907
 
-/*this program will also save the information in a file named Booked*/
+/*this program will also save the information in a file named Booked. Booked.txt is also uploaded after running the code*/
 using namespace std;
 
 class person{
