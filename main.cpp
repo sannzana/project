@@ -14,9 +14,10 @@
 /*this program will also save the information in a file named Booked. Booked.txt is also uploaded after running the code*/
 using namespace std;
 
-class person{
-string name;;
-long long cell,cnic;
+class person
+{
+    string name;;
+    long long cell,cnic;
 public:
     person();
     person(string n, long long c, long long e);
@@ -41,7 +42,7 @@ person::person()
 person::person(string s, long long e, long long c)
 {
     s="user";
-      c=4499;
+    c=4499;
     e=454;
     this->cell=e;
     this->cnic=c;
@@ -100,10 +101,10 @@ void person::display()
     if (file.is_open())
     {
         file<<"By Your Given Information"<<endl;
-            file<<"__________________________"<<endl;
+        file<<"__________________________"<<endl;
         file<<"Your Name- "<<name<<endl;
-       file<<"Your Cell Phone Number- "<<cell<<endl;
-       file<<"Your Cnic Number- "<<cnic<<endl;
+        file<<"Your Cell Phone Number- "<<cell<<endl;
+        file<<"Your Cnic Number- "<<cnic<<endl;
         file<<"__________________________"<<endl;
         file.close();
     }
@@ -140,7 +141,7 @@ int customer::getCustomerId()
 {
     return customerId;
 }
-void customer::checkCustomer()
+/*void customer::checkCustomer()
 {
     char check;
     int arr[10];
@@ -149,7 +150,7 @@ void customer::checkCustomer()
     int ver;
     cout<<"Are YOU A New Customer Or A Member"<<endl;
     cout<<"Press N For New Member or If You Have A Old Membership Which Is Expired // Press M For Member"<<endl;
-        cin>>check;
+    cin>>check;
     for(int n=0; n<10; n++)
     {
         arr[n]=serial;// memberid's serially saved in array 'arr'
@@ -164,7 +165,7 @@ void customer::checkCustomer()
     if(check=='m'||check=='M')
     {
         cout<<"Enter Your Customer Id:- "<<endl;
-            cin>>ver;
+        cin>>ver;
 
 
 
@@ -187,7 +188,7 @@ void customer::checkCustomer()
                 neww<<"You Are a Member"<<endl;
                 neww<<"Your Member Id Is:- " <<ver<<endl;
                 neww<<"You Will Get Additional 10% Off!!"<<endl;
-                    neww.close();
+                neww.close();
             }
         }
         else
@@ -196,7 +197,7 @@ void customer::checkCustomer()
             cout<<"You are Not A Member!"<<endl;
 
             ofstream file("Booked.txt",ios_base::app); //Movie.txt
-    if (file.is_open())
+            if (file.is_open())
             {
                 file<<"Invalid Id"<<endl;
                 file<<"You Are Not a Member"<<endl;
@@ -208,40 +209,42 @@ void customer::checkCustomer()
 
     }
 
-}
+}*/
 
 void customer::oldCustomer()
 {
     cout<<"\t\t\tIf You Have A Old Membership Press Y Else Press N "<<endl;
-        char m;
+    char m;
     cin>>m;
 
-     if(m=='y'||m=='Y')
+    if(m=='y'||m=='Y')
     {
         int idd;
         cout<<"\t\t\tEnter Your Id"<<endl;
         cin>>idd;
         cout<<"\t\t\tDo You Want To Renew Your Membership? "<<endl;
         cout<<"\t\t\tType Y To Renew || Type N Not To Renew  "<<endl; // |||Booking Details|||
-            char y;
+        char y;
         cin>>y;
         if(y=='y'||y=='Y')
         {
             cout<<"\t\t\tCongratulation!!! Your Membership Is Renewed. Your Membership id: "<<idd<<endl;
             cout<<"\t\t\tYou Can Use Your Membership Id From The Next Purchase. Thank you "<<endl;
-        }}
-         else if(m=='n'||m=='N')
+        }
+    }
+    else if(m=='n'||m=='N')
 
-    {cout<<"\t\t\t\t\t----------------------------"<<endl;
-  cout<<"\t\tIf You Want To Buy A Membership Card, Please Fill up The Form And Fulfill The Other Conditions  "<<endl;
-  cout<<"\t\tYou Can Find The Form In New Members sector of Our Website Or visit The Office,Thank you"<<endl;
+    {
+        cout<<"\t\t\t\t\t----------------------------"<<endl;
+        cout<<"\t\tIf You Want To Buy A Membership Card, Please Fill up The Form And Fulfill The Other Conditions  "<<endl;
+        cout<<"\t\tYou Can Find The Form In New Members sector of Our Website Or visit The Office,Thank you"<<endl;
     }
 
-   // {
+    // {
 
-   // }
+    // }
 
-    }
+}
 
 
 
@@ -257,13 +260,13 @@ public:
     string getPass();
     void memberShip();
     void admin();
-void memberop();
+    void memberop();
 };
 
 member::member()
 {
-  this->userName="";//username;
-  this->passWord="";
+    this->userName="";//username;
+    this->passWord="";
 }
 void member::setPass(string pas)
 {
@@ -276,7 +279,7 @@ string member::getPass()
 
 void member::setUn(string unn)
 {
-   this->userName=unn;
+    this->userName=unn;
 }
 string member::getUn()
 {
@@ -290,22 +293,23 @@ void member::memberShip()
     cout<<"\t\t\t2)5% Additional Discount On Tickets"<<endl;
     cout<<"\t\t\t3)FREE 3D Glass\n\n"<<endl;
 
-   ofstream file("Booked.txt",ios_base::app); //Movie.txt
+    ofstream file("Booked.txt",ios_base::app); //Movie.txt
     if (file.is_open())
     {
         file<<"As Per Your Interest, These Are The Benefits Of Being A Member"<<endl;
         file<<"Members Benefits:- "<<endl;
-    file<<"1)Discount On Drinks and Snacks"<<endl;
-   file<<"2)5% Additional Discount On Tickets"<<endl;
-    file<<"3)FREE 3D Glass"<<endl;
-   file.close();
+        file<<"1)Discount On Drinks and Snacks"<<endl;
+        file<<"2)5% Additional Discount On Tickets"<<endl;
+        file<<"3)FREE 3D Glass"<<endl;
+        file.close();
     }
 }
 
-void member::memberop()
-{member m;
+/*void member::memberop()
+{
+    member m;
     m.memberShip();
-}
+}*/
 
 class movie
 {
@@ -459,11 +463,11 @@ void movie::playing()
 
 
     }
-     cout<<"\t\t======================================"<<endl;
+    cout<<"\t\t======================================"<<endl;
 
 
-cout<<"\n\n"<<endl;
-cout<<endl;
+    cout<<"\n\n"<<endl;
+    cout<<endl;
     cout<<"\t\t\tPress 1 For Movie No. 1"<<endl;
     cout<<"\t\t\tPress 2 For Movie No. 2"<<endl;
     cout<<"\t\t\tPress 3 For Movie No. 3"<<endl;
@@ -477,12 +481,12 @@ cout<<endl;
     cin>>c;
     if(c=='n'||c=='N')
     {
-    cout<<"\t\t\tPress 1 For Movie No. 1"<<endl;
-    cout<<"\t\t\tPress 2 For Movie No. 2"<<endl;
-    cout<<"\t\t\tPress 3 For Movie No. 3"<<endl;
-    cout<<"\t\t\tPress 4 For Movie No. 4"<<endl;
-    cin>>n;
-    c='y';
+        cout<<"\t\t\tPress 1 For Movie No. 1"<<endl;
+        cout<<"\t\t\tPress 2 For Movie No. 2"<<endl;
+        cout<<"\t\t\tPress 3 For Movie No. 3"<<endl;
+        cout<<"\t\t\tPress 4 For Movie No. 4"<<endl;
+        cin>>n;
+        c='y';
     }
     if (n==1 && (c=='Y'||c=='y'))
     {
@@ -491,15 +495,15 @@ cout<<endl;
         cout<<"\t\tDirector's Name::"<<m[0].getDirect()<<endl;
         cout<<"\t\tScreen::"<<m[0].getDimension()<<endl;
         ofstream file("Booked.txt",ios_base::app); //Movie.txt
-    if (file.is_open())
+        if (file.is_open())
         {
-           file<<"Your Selected Movie-"<<m[0].getMoviename()<<endl;
+            file<<"Your Selected Movie-"<<m[0].getMoviename()<<endl;
             file<<"Release Date::"<<m[0].getRelease()<<endl;
             file<<"Runtime::"<<m[0].getRuntime()<<endl;
             file<<"Director's Name::"<<m[0].getDirect()<<endl;
-           file<<"Screen::"<<m[0].getDimension()<<endl;
-          file<<"Genre::"<<m[0].getType()<<endl;
-          file.close();
+            file<<"Screen::"<<m[0].getDimension()<<endl;
+            file<<"Genre::"<<m[0].getType()<<endl;
+            file.close();
         }
 
 
@@ -518,13 +522,13 @@ cout<<endl;
         cout<<"\t\tDirector's Name::"<<m[1].getDirect()<<endl;
         cout<<"\t\tScreen::"<<m[1].getDimension()<<endl;
 
-       ofstream file("Booked.txt",ios_base::app); //Movie.txt
-    if (file.is_open())
+        ofstream file("Booked.txt",ios_base::app); //Movie.txt
+        if (file.is_open())
         {
-           file<<"Your Selected Movie-"<<m[1].getMoviename()<<endl;
+            file<<"Your Selected Movie-"<<m[1].getMoviename()<<endl;
             file<<"Release Date::"<<m[1].getRelease()<<endl;
-           file<<"Runtime::"<<m[1].getRuntime()<<endl;
-           file<<"Director's Name::"<<m[1].getDirect()<<endl;
+            file<<"Runtime::"<<m[1].getRuntime()<<endl;
+            file<<"Director's Name::"<<m[1].getDirect()<<endl;
             file<<"Screen::"<<m[1].getDimension()<<endl;
             file<<"Genre::"<<m[1].getType()<<endl;
             file.close();
@@ -547,13 +551,13 @@ cout<<endl;
         cout<<"\t\tDirector's Name::"<<m[2].getDirect()<<endl;
         cout<<"\t\tScreen::"<<m[2].getDimension()<<endl;
 
-       ofstream file("Booked.txt",ios_base::app); //Movie.txt
-    if (file.is_open())
+        ofstream file("Booked.txt",ios_base::app); //Movie.txt
+        if (file.is_open())
         {
-           file<<"Your Selected Movie-"<<m[2].getMoviename()<<endl;
+            file<<"Your Selected Movie-"<<m[2].getMoviename()<<endl;
             file<<"Release Date::"<<m[2].getRelease()<<endl;
-           file<<"Runtime::"<<m[2].getRuntime()<<endl;
-           file<<"Director's Name::"<<m[2].getDirect()<<endl;
+            file<<"Runtime::"<<m[2].getRuntime()<<endl;
+            file<<"Director's Name::"<<m[2].getDirect()<<endl;
             file<<"Screen::"<<m[2].getDimension()<<endl;
             file<<"Genre::"<<m[2].getType()<<endl;
             file.close();
@@ -575,13 +579,13 @@ cout<<endl;
         cout<<"\t\tDirector's Name::"<<m[3].getDirect()<<endl;
         cout<<"\t\tScreen::"<<m[3].getDimension()<<endl;
 
-       ofstream file("Booked.txt",ios_base::app); //Movie.txt
-    if (file.is_open())
+        ofstream file("Booked.txt",ios_base::app); //Movie.txt
+        if (file.is_open())
         {
-           file<<"Your Selected Movie-"<<m[3].getMoviename()<<endl;
+            file<<"Your Selected Movie-"<<m[3].getMoviename()<<endl;
             file<<"Release Date::"<<m[3].getRelease()<<endl;
             file<<"Runtime::"<<m[3].getRuntime()<<endl;
-           file<<"Director's Name::"<<m[3].getDirect()<<endl;
+            file<<"Director's Name::"<<m[3].getDirect()<<endl;
             file<<"Screen::"<<m[3].getDimension()<<endl;
             file<<"Genre::"<<m[3].getType()<<endl;
             file.close();
@@ -602,7 +606,7 @@ cout<<endl;
 void movie::movieSelected()
 {
     cout<<"\t\t\t\t\tDetails About Your Selected Movie::"<<endl;
- cout<<"\t\t\t\t\tYour Selected Movie's Name-"<<getMoviename()<<endl;
+    cout<<"\t\t\t\t\tYour Selected Movie's Name-"<<getMoviename()<<endl;
     cout<<"\t\t\t\t\tRelease Date::"<<getRelease()<<endl;
     cout<<"\t\t\t\t\tRuntime::"<<getRuntime()<<endl;
     cout<<"\t\t\t\t\tDirector's Name::"<<getDirect()<<endl;
@@ -610,16 +614,16 @@ void movie::movieSelected()
     cout<<"\t\t\t\t\tScreen::"<<getDimension()<<endl;
 
     ofstream cnn("Booked.txt",ios_base::app);
- if(cnn. is_open())
- {
-    cnn<<"\t\t\tDetails About Your Selected Movie::"<<endl;
-    cnn<<"\t\tRelease Date::"<<getRelease()<<endl;
-    cnn<<"\t\tRuntime::"<<getRuntime()<<endl;
-    cnn<<"\t\tDirector's Name::"<<getDirect()<<endl;
-    cnn<<"\t\tGenre::"<<getType()<<endl;
-    cnn<<"\t\tScreen::"<<getDimension()<<endl;
-    cnn.close();
- }
+    if(cnn. is_open())
+    {
+        cnn<<"\t\t\tDetails About Your Selected Movie::"<<endl;
+        cnn<<"\t\tRelease Date::"<<getRelease()<<endl;
+        cnn<<"\t\tRuntime::"<<getRuntime()<<endl;
+        cnn<<"\t\tDirector's Name::"<<getDirect()<<endl;
+        cnn<<"\t\tGenre::"<<getType()<<endl;
+        cnn<<"\t\tScreen::"<<getDimension()<<endl;
+        cnn.close();
+    }
 
 }
 
@@ -627,18 +631,19 @@ void movie ::viewb()
 {
     cout<<"\t\t\tYour Bookings:-"<<endl;
     cout<<"\t\t\tMovie Details "<<endl;
-     cout<<"\t\t\tYour Selected Movie-  "<<getMoviename()<<endl;
-            cout<<"\t\t\tRelease Date::  "<<getRelease()<<endl;
-            cout<<"\t\t\tRuntime::  "<<getRuntime()<<endl;
-            cout<<"\t\t\tDirector's Name::  "<<getDirect()<<endl;
-            cout<<"\t\t\tScreen::  "<<getDimension()<<endl;
-            cout<<"\t\t\tGenre::  "<<getType()<<endl;
+    cout<<"\t\t\tYour Selected Movie-  "<<getMoviename()<<endl;
+    cout<<"\t\t\tRelease Date::  "<<getRelease()<<endl;
+    cout<<"\t\t\tRuntime::  "<<getRuntime()<<endl;
+    cout<<"\t\t\tDirector's Name::  "<<getDirect()<<endl;
+    cout<<"\t\t\tScreen::  "<<getDimension()<<endl;
+    cout<<"\t\t\tGenre::  "<<getType()<<endl;
 
 
 }
 
 void movie::listt()
-{movie m[4];
+{
+    movie m[4];
     m[0].setMoviename("Fast X");
     m[0].setRuntime("2 h 32 min");
     m[0].setRelease("19 May 2023");
@@ -668,7 +673,7 @@ void movie::listt()
     m[3].setDimension("3D");
     m[3].setType("Adventure � Family � Fantasy � Musical � Romance");
 
-     for(int  i=0; i<4; i++)
+    for(int  i=0; i<4; i++)
     {
         cout<<"\t\t\t\t_______________________"<<endl;
         cout<<"\t\t\tMovie Number-"<<i+1<<endl;
@@ -683,11 +688,13 @@ void movie::listt()
 
     }
 
-       ofstream file("Booked.txt", ios_base::app);
+    ofstream file("Booked.txt", ios_base::app);
 
-    if (file.is_open()) {
+    if (file.is_open())
+    {
         // Write the movie information to the file
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++)
+        {
             file << "Movie Name: " << m[i].getMoviename() << endl;
             file << "Runtime: " << m[i].getRuntime() << endl;
             file << "Release Date: " << m[i].getRelease() << endl;
@@ -700,7 +707,8 @@ void movie::listt()
         // Close the file
         file.close();
 
-}}
+    }
+}
 
 void movie::menu()
 {
@@ -708,18 +716,37 @@ void movie::menu()
     cout<<"\t\t\t||Welcome To Movie Ticket Booking||"<<endl;
     cout<<"\t\t\t==================================="<<endl;
     cout<<"\t\t\tPress 1 To Book Ticket: "<<endl;
-cout<<"\t\t\tPress 2 To View Booking: "<<endl;
-    cout<<"\t\t\tPress 3 To View Price Of Tickets: "<<endl;
-    cout<<"\t\t\tPress 4 To Check Available Seats: "<<endl;
-    cout<<"\t\t\tPress 5 To Show Movies List: "<<endl;
-    cout<<"\t\t\tPress 6 To Check Movie Timings: "<<endl;
+    cout<<"\t\t\tPress 2 To View Booking: "<<endl;
+    cout<<"\t\t\tPress 3 To Show Movies List: "<<endl;
+    cout<<"\t\t\tPress 4 To Check Movie Timings: "<<endl;
+    cout<<"\t\t\tPress 5 To View Price Of Tickets: "<<endl;
+    cout<<"\t\t\tPress 6 To Check Available Seats: "<<endl;
     //cout<<"\t\t\tPress 6 To Add A New Movie Or To Add More Tickets: "<<endl;
-   // cout<<"\t\t\tPress 6 To Show Movies List: "<<endl;
+    // cout<<"\t\t\tPress 6 To Show Movies List: "<<endl;
     cout<<"\t\t\tPress 7 To Get A Membership: "<<endl;
     cout<<"\t\t\tPress 8 To Exit: "<<endl;
     cout<<"\t\t\t________________________"<<endl;
+static int s=1;
+ofstream file("Booked.txt", ios_base::app);
 
-
+    if (file.is_open() && s==1)
+    {
+      file<<"\t\t\t==================================="<<endl;
+    file<<"\t\t\t||Welcome To Movie Ticket Booking||"<<endl;
+    file<<"\t\t\t==================================="<<endl;
+   file<<"\t\t\tPress 1 To Book Ticket: "<<endl;
+    file<<"\t\t\tPress 2 To View Booking: "<<endl;
+     file<<"\t\t\tPress 3 To Show Movies List: "<<endl;
+   file<<"\t\t\tPress 4 To Check Movie Timings: "<<endl;
+    file<<"\t\t\tPress 5 To View Price Of Tickets: "<<endl;
+   file<<"\t\t\tPress 6 To Check Available Seats: "<<endl;
+    //cout<<"\t\t\tPress 6 To Add A New Movie Or To Add More Tickets: "<<endl;
+    // cout<<"\t\t\tPress 6 To Show Movies List: "<<endl;
+    file<<"\t\t\tPress 7 To Get A Membership: "<<endl;
+    file<<"\t\t\tPress 8 To Exit: "<<endl;
+   file<<"\t\t\t________________________"<<endl;
+   s++;
+    }
 
 }
 
@@ -755,7 +782,8 @@ void time::schedule1()
 {
     ofstream file("Booked.txt",ios_base::app); //Movie.txt
     if (file.is_open())
-    {file<<"Selected Movie's Timing:: "<<endl;
+    {
+        file<<"Selected Movie's Timing:: "<<endl;
         file << "Day         Timing\n"<<endl;
         file << "Monday     11 am" << endl;
         file << "Monday     8 pm" << endl;
@@ -792,7 +820,8 @@ void time::schedule2()
 
     ofstream file("Booked.txt",ios_base::app);
     if (file.is_open())
-    {file<<"Selected Movie's Timing:: "<<endl;
+    {
+        file<<"Selected Movie's Timing:: "<<endl;
         file << "Day         Timing\n"<<endl;
         file << "Monday     3 pm" << endl;
         file << "Tuesday    7 pm" << endl;
@@ -813,9 +842,10 @@ void time::schedule2()
 }
 void time::schedule3()
 {
-   ofstream file("Booked.txt",ios_base::app);//Movie.txt
+    ofstream file("Booked.txt",ios_base::app);//Movie.txt
     if (file.is_open())
-    {file<<"Selected Movie's Timing:: "<<endl;
+    {
+        file<<"Selected Movie's Timing:: "<<endl;
         file << "Day         Timing\n"<<endl;
         file << "Sunday     3 pm" << endl;
         file << "Wednesday  3 pm" << endl;
@@ -836,7 +866,8 @@ void time::schedule4()
 {
     ofstream file("Booked.txt",ios_base::app);
     if (file.is_open())
-    {file<<"Selected Movie's Timing:: "<<endl;
+    {
+        file<<"Selected Movie's Timing:: "<<endl;
         file << "Day         Timing\n"<<endl;
         file << "Sunday     11 am" << endl;
         file << "Sunday     8 pm" << endl;
@@ -865,6 +896,9 @@ class ticket
     char GoldorSilver;
     int  numbert;
     int availableseats;
+    friend class friendd1;
+    friend class friendd2;
+
 public:
     time t;
     movie m;
@@ -894,7 +928,7 @@ public:
     int getnumber();
     //void sttickettype(char );
     void ticketd();
-     //void settickettype(string)
+    //void settickettype(string)
 };
 
 ticket::ticket()
@@ -932,7 +966,7 @@ float ticket::getprice()
 }
 void ticket::settickettype(char tt)
 {
-  GoldorSilver=tt;
+    GoldorSilver=tt;
 }
 char ticket::gettickettype()
 {
@@ -949,7 +983,7 @@ int ticket::getseat()
 }
 void ticket::movie1()
 {
-     cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
     cout<<"\t\t\tMovie Timing:-\n"<<endl;
     cout<<"\t\t\tDay:    Time:"<<endl;
     t.schedule1();
@@ -957,7 +991,7 @@ void ticket::movie1()
     cout<<"Enter Your Choice Please-"<<endl; //choices can be 1/2/3/4
     int x;
     cin>>x;
-   cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
     if(x==1)
     {
         /*cout<<"\t\t\t\t\t1)\tMonday     11 am\n";
@@ -985,7 +1019,7 @@ void ticket::movie1()
         t.setmovietime("Thursday    8 pm");
     }
 
-   cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
 
 
 }
@@ -1000,11 +1034,11 @@ void ticket::movie2()
     cout<<"\t\t\tMovie Timing:-\n"<<endl;
     cout<<"\t\t\tDay:    Time:"<<endl;
     t.schedule2();
-     cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
     cout<<"Enter Your Choice Please-"<<endl ;//choices can be 1/2/3/4
     int x;
     cin>>x;
-       cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
     if(x==1)
     {
         cout<<"\t\t\tTimings:Wednesday    8 pm"<<endl;
@@ -1028,7 +1062,7 @@ void ticket::movie2()
         t.setmovietime("Saturday    8 pm");
     }
 
-     cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
 
 
 }
@@ -1039,11 +1073,11 @@ void ticket::movie3()
      cout<<"\t\t\t\t\t2)\tWednesday    3 pm\n";
      cout<<"\t\t\t\t\t3)\tThursday    3 pm\n";
      cout<<"\t\t\t\t\t4)\tFriday    3 pm\n";*/
-   cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
     cout<<"\t\t\tMovie Timing___\n"<<endl;
     cout<<"\t\t\tDay:    Time:"<<endl;
     t.schedule3();
-     cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
     cout<<"Enter Your Choice Please-"<<endl ;//choices can be 1/2/3/4
     int x;
     cin>>x;
@@ -1071,7 +1105,7 @@ void ticket::movie3()
         t.setmovietime("Friday    3 pm");
     }
 
-   cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
 
 
 }
@@ -1085,11 +1119,11 @@ void ticket::movie4()
     cout<<"\t\t\t\t\t4)\tSaturday    11 am\n";*/
 
 
-      cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
     cout<<"\t\t\tMovie Timing___\n"<<endl;
     cout<<"\t\t\tDay:    Time:"<<endl;
     t.schedule4();
-      cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
     cout<<"Enter Your Choice Please-"<<endl; //choices can be 1/2/3/4
     int x;
     cin>>x;
@@ -1116,25 +1150,26 @@ void ticket::movie4()
         cout<<"\t\t\tTimings:Saturday    11 am"<<endl;
         t.setmovietime("Saturday    11 am");
     }
- cout<<"\t\t\t_____________________________________\n"<<endl;
+    cout<<"\t\t\t_____________________________________\n"<<endl;
 
 
 }
 
 void ticket::ticketd()
-{cout<<"\t\t\t======================================================="<<endl;
-    m.viewb();
+{
+    cout<<"\t\t\t======================================================="<<endl;
+    m.viewb();  //630
     cout<<"\t\t\tTicket Id  "<<getid()<<endl;
-   // cout<<"\t\t\tTicket Type"<<getickettype()<<endl;
-   // cout<<"\t\t\tTicket Price"<<getticketprice()<<endl;
+    // cout<<"\t\t\tTicket Type"<<getickettype()<<endl;
+    // cout<<"\t\t\tTicket Price"<<getticketprice()<<endl;
 }
 
 void ticket::schedule()
 {
-    m.playing();
+    m.playing();  //416 // movie option
     if(m.time==1)
     {
-        movie1();
+        movie1();  // selsected movie has 4 time
     }
     if(m.time==2)
     {
@@ -1150,7 +1185,8 @@ void ticket::schedule()
     }
 }
 void ticket::tickettype()
-{ cout<<"\t\t\t======================================================="<<endl;
+{
+    cout<<"\t\t\t======================================================="<<endl;
     cout<<"\t\t\t\t\tEnter Your Ticket Type Please"<<endl;
     cout<<"\t\t\t\t\tSilver Costs Rs.500 taka+ 5% vat"<<endl;
     cout<<"\t\t\t\t\tGold Costs Rs.1000 taka+ 5% vat"<<endl;
@@ -1158,6 +1194,7 @@ void ticket::tickettype()
     cout<<"\t\t\t\t\tPress G For Gold"<<endl;
     cout<<"\t\t\t\t\tEnter Your Choice"<<endl;
     char s;
+    static int count;
     cin>>s;
     cout<<"\t\t\t\t\t__________________________"<<endl;
     if (s=='s'||s=='s')
@@ -1173,7 +1210,7 @@ void ticket::tickettype()
         setprice(1050.00);
         settickettype('G');
     }
-  cout<<"\t\t\t======================================================="<<endl;
+    cout<<"\t\t\t======================================================="<<endl;
 
 }
 
@@ -1181,7 +1218,7 @@ void ticket::display()
 {
     number();
     cout<<"\t\t\t\t\t____________________"<<endl;
-     cout<<"\t\t\t======================================================="<<endl;
+    cout<<"\t\t\t======================================================="<<endl;
     cout<<"\t\t\t\t\tYour Ticket Is Successfully Bokked\n"<<endl;
     cout<<"\t\t\t\t\t|||Booking Details|||\n"<<endl;
     cout<<"\t\t\t\t\tTicket Id:-"<<getid()<<endl;
@@ -1191,27 +1228,32 @@ void ticket::display()
     char p;
     cin>>p;
     if(p=='Y'||p=='y')
-    {cout<<"\t\t\t\t\tYour Membership Id Number Please-"<<endl;
-    long long k;
-    cin>>k;
-    if(k==10203||k==10207||k==56009||k==20204||k==45907)// it will be valid for 10203, 10207,20204,56009,45907
+    {
+        cout<<"\t\t\t\t\tYour Membership Id Number Please-"<<endl;
+        long long k;
+        cin>>k;
+        if(k==10203||k==10207||k==56009||k==20204||k==45907)// it will be valid for 10203, 10207,20204,56009,45907
         {
             cout<<"\t\t\t\t=========================================="<<endl;
             cout<<"\t\t\t\t\tYou Will Get A Additional 10% Off"<<endl;
             float r=(getprice()-getprice()*.1);
             //float f=getprice()-getprice*.1;
             cout<<"\t\t\t\t\tTicket Total Cost Without 10% Discount Is "<<getprice()<<" BDT"<<endl;
-        cout<<"\t\t\t\t\tTicket Price:- "<<r<<" BDT"<<endl;
-        setprice(r );}
-        else
-            {cout<<"\t\t\t\t=========================================="<<endl;
-                cout<<"\t\t\t\t\tSorry Invalid Id"<<endl;
-                cout<<"\t\t\t\t\tTicket Price:-"<<getprice()<<endl;}
+            cout<<"\t\t\t\t\tTicket Price:- "<<r<<" BDT"<<endl;
+            setprice(r );
         }
-         else
-            {
-cout<<"\t\t\t\t=========================================="<<endl;
-                cout<<"\t\t\t\t\tTicket Price:-"<<getprice()<<endl;}
+        else
+        {
+            cout<<"\t\t\t\t=========================================="<<endl;
+            cout<<"\t\t\t\t\tSorry Invalid Id"<<endl;
+            cout<<"\t\t\t\t\tTicket Price:-"<<getprice()<<endl;
+        }
+    }
+    else
+    {
+        cout<<"\t\t\t\t=========================================="<<endl;
+        cout<<"\t\t\t\t\tTicket Price:-"<<getprice()<<endl;
+    }
     cout<<endl;
     cout<<endl;
 
@@ -1254,13 +1296,14 @@ void ticket::availableseat()
     cout<<"\t\t\t::Available Seats Of The Theater::"<<endl;
     cout<<"\t\t\t==============================="<<endl;
     cout<<"\t\t\tTotal Seats Of The Theater : 300"<<endl;
-    cout<<"\t\t\tSeats Booked:- "<< getnumber()<<endl;
+    cout<<"\t\t\tPreviously Seats Booked:- "<< getnumber()<<endl;
+
+
     cout<<"\t\t\tAvailable Seats::  "<<300-getnumber()<<endl;
     cout<<"\t\t\t==============================="<<endl;
 
 
 }
-
 void ticket::timings()
 {
     cout<<"\t\t\t======================================================="<<endl;
@@ -1271,21 +1314,21 @@ void ticket::timings()
     cout<<"\t\t\t1) Fast X"<<endl;
     cout<<"\t\t\tRelease date:- 19 May 2023 "<<endl;
     cout<<"\t\t\tDirector:- Louis Leterrier"<<endl;
-        cout<<"\t\t\tCast - Vin Diesel, Brie Larson, Jason Momoa\n\n"<<endl;
+    cout<<"\t\t\tCast - Vin Diesel, Brie Larson, Jason Momoa\n\n"<<endl;
 
     cout<<"\t\t\t2) Guaedians Of The Galaxy Volume 3 "<<endl;
     cout<<"\t\t\tDirector:- James Gunn"<<endl;
-        cout<<"\t\t\tRelease date:- 5 May 2023 "<<endl;
+    cout<<"\t\t\tRelease date:- 5 May 2023 "<<endl;
     cout<<"\t\t\tCast - Dave Dautiata, Karen Gillan, Elizabeth Debicki\n\n"<<endl;
 
     cout<<"\t\t\t3) Avatar:The Way Of Water"<<endl;
     cout<<"\t\t\tDirector:- James Cameron"<<endl;
-        cout<<"\t\t\tRelease date:- 22 December 2022  "<<endl;
+    cout<<"\t\t\tRelease date:- 22 December 2022  "<<endl;
     cout<<"\t\t\tCast - Zoe Saldana, Sam Worthington, Stephen Lang\n\n"<<endl;
 
     cout<<"\t\t\t4) The Little Mermaid"<<endl;
     cout<<"\t\t\tDirector:- Rob Marshall"<<endl;
-        cout<<"\t\t\tRelease date:- 25 May 2023 "<<endl;
+    cout<<"\t\t\tRelease date:- 25 May 2023 "<<endl;
     cout<<"\t\t\tCast - Halle Bailey, Jonah King, Melissa McCarthy\n\n"<<endl;
 
     ofstream file("Booked.txt",ios_base:: app);
@@ -1298,21 +1341,21 @@ void ticket::timings()
         file<<"\t\t\t1) Fast X"<<endl;
         file<<"\t\t\tRelease date:- 19 May 2023 "<<endl;
         file<<"\t\t\tDirector:- Louis Leterrier"<<endl;
-            cout<<"\t\t\tCast - Vin Diesel, Brie Larson, Jason Momoa\n\n"<<endl;
+        cout<<"\t\t\tCast - Vin Diesel, Brie Larson, Jason Momoa\n\n"<<endl;
 
         file<<"\t\t\t2) Guaedians Of The Galaxy Volume 3 "<<endl;
         file<<"\t\t\tDirector:- James Gunn"<<endl;
-            file<<"\t\t\tRelease date:- 5 May 2023 "<<endl;
+        file<<"\t\t\tRelease date:- 5 May 2023 "<<endl;
         file<<"\t\t\tCast - Dave Dautiata, Karen Gillan, Elizabeth Debicki\n\n"<<endl;
 
         file<<"\t\t\t3) Avatar:The Way Of Water"<<endl;
         file<<"\t\t\tDirector:- James Cameron"<<endl;
-            file<<"\t\t\tRelease date:- 22 December 2022  "<<endl;
+        file<<"\t\t\tRelease date:- 22 December 2022  "<<endl;
         file<<"\t\t\tCast - Zoe Saldana, Sam Worthington, Stephen Lang\n\n"<<endl;
 
         file<<"\t\t\t4) The Little Mermaid"<<endl;
         file<<"\t\t\tDirector:- Rob Marshall"<<endl;
-            file<<"\t\t\tRelease date:- 25 May 2023 "<<endl;
+        file<<"\t\t\tRelease date:- 25 May 2023 "<<endl;
         file<<"\t\t\tCast - Halle Bailey, Jonah King, Melissa McCarthy\n\n"<<endl;
     }
 
@@ -1339,17 +1382,42 @@ void ticket::timings()
     }
 }
 
-void ticket::pricet(){
-cout<<"\t\t\t Choose Your Preferable Type Of Ticket"<<endl;
-cout<<"\t\t\tSelect S For Silver And G For Golden"<<endl;
-char c;
-cin>>c;
-if(c=='s'||c=='S')
-{cout<<"\t\t\tPrice Of Silver Ticket is 525 BDT Including 5% Vat"<<endl;}
-if(c=='G'||c=='g')
-{cout<<"\t\t\tPrice Of Golden Ticket is 1050 BDT Including 5% Vat"<<endl;}
+class friendd1
+{
+public:
+    void show(ticket &t1)
+    {
+        cout << "\t\t\tPrice Of Silver Ticket is 525 BDT Including 5% Vat" << endl;
+    }
+};
+class friendd2
+{
+public:
+    void show(ticket &t2)
+    {
+        // if (t2.c=='g'||'G')
+        cout << "\t\t\tPrice Of Golden Ticket is 1050 BDT Including 5% Vat" << endl;
+    }
+};
 
+void ticket::pricet()
+{
+    cout << "\t\t\tChoose Your Preferred Type Of Ticket" << endl;
+    cout << "\t\t\tSelect S For Silver And G For Golden" << endl;
+    char c;
+    cin >> c;
 
+    friendd1 f1;
+    friendd2 f2;
+
+    if (c == 's' || c == 'S')
+    {
+        f1.show(*this);
+    }
+    else if (c == 'g' || c == 'G')
+    {
+        f2.show(*this);
+    }
 }
 
 
@@ -1367,73 +1435,77 @@ int main()
     {
         m.menu();
         cout<<"\t\t\tEnter Your Choice  "<<endl;
-            cin>>x;
+        cin>>x;
         switch(x)
         {
         case 1:
         {
             cout<<"\t\t\tMovie list-"<<endl;
-                t.schedule();
-            t.tickettype();
+            t.schedule(); //1167 or near
+            t.tickettype();  //
             //t.number();
             t.display();
+           //  t.availableseat();// 1197, info , plus asking about membership
             break;
         }
         case 2:
         {
-            t.ticketd();
+            t.ticketd(); //1139 // to show booking
             break;
         }
         case 3:
+        {
+            m.listt();
+            break;
+        }
+        case 4:
+        {
+            t.timings();
+            break;
+        }
+        case 5:
         {
             t.pricet();
             break;
         }
 
 
-        case 4:
+        case 6:
         {
             t.availableseat();
             break;
         }
 
-        case 5:
-        {
-            m.listt();
-            break;
-        }
-        case 6:
-        {
-            t.timings();
-            break;
-        }
+
 
         case 7:
         {
             me.memberShip();
             cin.ignore();
-            cu.insertinfo();
-        cu.oldCustomer();
-            cu.display();
+            cu.insertinfo(); // inherited from persom //81
+            cu.oldCustomer();  //214
+            cu.display(); // 92
             break;
 
 
         }
         case 8:
-            {return 0;}
-default:
+        {
+            return 0;
+        }
+        default:
         {
             break;
         }
         }
         cout<<"\t\t\t======================================================="<<endl;
-      cout<<"\t\t\tPress 1 To Go To Main Menu "<<endl;
-      cout<<"\t\t\tPress 0 To Exit "<<endl;
-      //int p;
-      cin>>lop;
+        cout<<"\t\t\tPress 1 To Go To Main Menu "<<endl;
+        cout<<"\t\t\tPress 0 To Exit "<<endl;
+        //int p;
+        cin>>lop;
 
-    }while(lop==1);
+    }
+    while(lop==1);
     system("pause");
     return 0;
 }
-
