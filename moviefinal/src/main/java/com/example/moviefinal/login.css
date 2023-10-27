@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 03 10, 23, 10:44:33 AM
+    Author     : WINDOWS 10
+*/
+
+.gradient{
+    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
+}
+
+.white-form{
+    -fx-background-color: #fff;
+}
+
+.head-label{
+    -fx-border-color: #286155;
+    -fx-border-width: 0 0 0 3px;
+    -fx-padding: 0 0 0 5px;
+}
+
+.login-btn{
+    -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size: 12px;
+}
+.login-btn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #0fb565, #399a8f);
+    -fx-text-fill: #000;
+    -fx-font-size: 14px;
+}
+
+.textfield{
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to bottom right, #0f6789, #286155);
+    -fx-border-width: .5px;
+}
+.textfield:focused{
+    -fx-border-width: 1px;
+}
+
+.create-btn{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-border-color: #fff;
+    -fx-border-width: 1px;
+}
+.create-btn:hover{
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+}
+
+
+.table{
+-fx-background-color: #FFF;
+-fx-background-radius: 10px;
+-fx-border-color: #ae2d3c;
+-fx-border-radius: 10px;
+-fx-fill:#fff;}
+
+.table.column-header-background{
+    -fx-background-color:linear-gradient(to top left,#0c4650,#178380);
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 10px 10px 0px 0px ;}
+
+.table.column-header, .table.filler{
+    -fx-background-color:tarnsparent;
+    -fx-size:50px;
+    -fx-fill:#fff ;}
+
+.table.column-header.label{
+    -fx-text-fill: #fff;
+}
+
+.card
+{
+    -fx-border-color: #2fc;
+    -fx-border-radius: 10px 0px 0px 10px;
+
+
+}
+
+style="-fx-background-color:linear-gradient(to bottom right,#a8d0b9,#8fc7b2);-fx-text-fill: #fff; -fx-background-radius: 5px 0px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 0px 5px 0px;" text="Movie Title" />
+<TableColumn prefWidth="199.2000732421875" style="-fx-background-color:linear-gradient(to bottom right,#65a98f,#308c6c); -fx-text-fill: #fff;-fx-background-radius: 5px 0px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius:5px 0px 5px 0px;" text="Genre" />
+<TableColumn prefWidth="218.40005493164062" style="-fx-background-color:linear-gradient(to bottom right,#2c8f6d,#11717a);-fx-text-fill: #fff; -fx-background-radius: 5px 0px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 0px 5px 0px;" text="Duration" />
+<TableColumn prefWidth="227.2000732421875" style="-fx-background-color:linear-gradient(to bottom right,#0d6e77,#075c64); -fx-text-fill: #fff;-fx-background-radius: 5px 5px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 5px 5px 0px;" text="Current"
