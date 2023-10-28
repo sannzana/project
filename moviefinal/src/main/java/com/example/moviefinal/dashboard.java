@@ -12,13 +12,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.net.URL;
+import java.security.cert.Extension;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -47,8 +51,7 @@ public class dashboard  implements Initializable {
     @FXML
     private TableColumn<moviesData,String> addMovie_col_publishedDate;
 
-    @FXML
-    private TextField addMovie_date;
+
 
     @FXML
     private Button addMovie_deleteBtn;
@@ -256,6 +259,8 @@ public class dashboard  implements Initializable {
 
     @FXML
     private AnchorPane username_form;
+    @FXML
+    private DatePicker addMovie_date;
 
 
 
@@ -403,7 +408,7 @@ public class dashboard  implements Initializable {
 
       }
   }
-
+private Image image;
   private double x=0;
     private double y=0;
 
@@ -412,6 +417,18 @@ public class dashboard  implements Initializable {
    private Statement statement;
    private ResultSet result;
     private Connection connect;
+
+    public void clearAddMovieList()
+    {
+        addMovie_title.setText("");
+        addMovie_genre.setText("");
+        addMovie_imageview.setImage(null);
+        addMovie_date.setValue(null);
+
+
+    }
+
+
 
     public ObservableList<moviesData> addMoviesList()
     { ObservableList<moviesData>listData= FXCollections.observableArrayList();
@@ -430,7 +447,104 @@ public class dashboard  implements Initializable {
         } catch(Exception e){e.printStackTrace();}
         return listData;
     }
+public void importImage(){
+    FileChooser open = new FileChooser();
+open.setTitle("Open Image File");
+//open.getExtensionFilters().add(new ExtensionFilter("Image Files", "*.png", "*.jpg")); // PROBLEM
+open.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"))   ;
 
+    Stage stage = (Stage) addMovie_form.getScene().getWindow();
+    File file = open.showOpenDialog(stage);
+        if(file!=null)
+        {
+            image=new Image(file.toURI() .toString(),222,251,false,true);
+            addMovie_imageview.setImage(image);
+getData.path=file.getAbsolutePath();
+
+
+        }
+
+
+
+
+    }
+
+
+
+    public void insertAddMovies()
+    {
+        // movie=??????????????????????????????????????
+        String sql1="SELECT * FROM movie WHERE movieTitle= '"
+                + addMovie_title.getText()+"'";
+        connect=database.connectDB();
+        Alert alert;
+
+
+        try{
+            statement=connect.createStatement();
+            result=statement.executeQuery(sql1);
+
+            if(result.next())
+            {alert=new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("ERROR!");
+                alert.setHeaderText(null);
+                alert.setContentText(addMovie_title .getText()+" was already exist!");
+                alert.showAndWait();}
+
+
+            else{
+
+                if(addMovie_title.getText().isEmpty()||
+                addMovie_genre.getText().isEmpty()||
+                addMovie_duration.getText().isEmpty()||
+                addMovie_date.getValue()==null||
+                addMovie_imageview.getImage()==null)
+                {
+                    alert=new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("ERROR!");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Please fill all the blank fields");
+                    alert.showAndWait();
+
+
+
+
+                }
+                else
+                {
+                    String sql="INSERT INTO movie (movieTitle,genre,duration,image,date) VALUES(?,?,?,?,?)";
+
+                    String uri=getData.path;
+                    uri=uri.replace("\\","\\\\");
+
+                    prepare.setString(1,addMovie_title.getText());
+                    prepare.setString(2,addMovie_genre.getText());
+                    prepare.setString(3,addMovie_duration.getText());
+                    prepare.setString(4,uri);
+                    prepare.setString(5,String.valueOf(addMovie_date.getValue()));
+
+
+                    prepare.execute();
+                    alert=new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("New Movie Successfully Added!");
+                    alert.showAndWait();
+                    clearAddMovieList();
+                    showAddMoviesList();
+
+                }
+
+
+            }
+
+
+
+
+
+        } catch(Exception e){e.printStackTrace();}
+
+    }
     private ObservableList<moviesData>listAddMovies;
     public void showAddMoviesList()
     {
@@ -454,6 +568,15 @@ addMovie_tableView.setItems(listAddMovies);
 
         if((num -1)<-1){return;}
 
+addMovie_title .setText(movD.getTitle());
+        addMovie_genre.setText(movD.getGenre());
+        addMovie_duration.setText(movD.getDuration());
+        String getdate =String.valueOf(movD.getDate());
+
+
+        String uri= "file:"+movD.getImage();
+        image=new Image(uri,222,251,false,true);
+        addMovie_imageview.setImage(image);
 
 
     }

@@ -21,7 +21,7 @@
             <AnchorPane fx:id="side_form" layoutY="5.0" prefHeight="400.0" prefWidth="300.0" style=" -fx-background-color:linear-gradient(to bottom right,#343d86,#065e49);">
                <children>
                   <Label layoutX="101.0" layoutY="310.0" prefHeight="18.0" prefWidth="103.0" text="Create Account " underline="true" />
-                  <Button fx:id="reg_btn" layoutX="61.0" layoutY="336.0" mnemonicParsing="false" onMouseClicked="#handleMouseEntered_3" onMouseEntered="#handleMouseEntered_1" onMouseExited="#handleMouseExited_1" prefHeight="34.0" prefWidth="182.0" style="  -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);     -fx-background-radius: 5px;     -fx-cursor: hand;     -fx-text-fill: #fff;     -fx-font-size: 12px; " text="Create New Account" visible="false">
+                  <Button fx:id="side_CreateBtn" layoutX="61.0" layoutY="336.0" mnemonicParsing="false" onMouseClicked="#handleMouseEntered_3" onMouseEntered="#handleMouseEntered_1" onMouseExited="#handleMouseExited_1" prefHeight="34.0" prefWidth="182.0" style="  -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);     -fx-background-radius: 5px;     -fx-cursor: hand;     -fx-text-fill: #fff;     -fx-font-size: 12px; " text="Create New Account">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -58,36 +58,36 @@
                         <Glow />
                      </effect>
                   </ImageView>
-               <Button fx:id="reg_btn_1" layoutX="61.0" layoutY="336.0" mnemonicParsing="false" onMouseClicked="#handleMouseEntered_3" onMouseEntered="#handleMouseEntered_4" onMouseExited="#handleMouseExited_4" prefHeight="34.0" prefWidth="182.0" style="  -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);     -fx-background-radius: 5px;     -fx-cursor: hand;     -fx-text-fill: #fff;     -fx-font-size: 12px; " text="Already Have an Account">
+               <Button fx:id="side_alreadyHave" layoutX="61.0" layoutY="336.0" mnemonicParsing="false" onMouseClicked="#handleMouseEntered_3" onMouseEntered="#handleMouseEntered_4" onMouseExited="#handleMouseExited_4" prefHeight="34.0" prefWidth="182.0" style="  -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);     -fx-background-radius: 5px;     -fx-cursor: hand;     -fx-text-fill: #fff;     -fx-font-size: 12px; " text="Already Have an Account" visible="false">
                   <font>
                      <Font size="14.0" />
                   </font>
                </Button>
                </children></AnchorPane>
-            <AnchorPane fx:id="login_form" layoutX="300.0" prefHeight="400.0" prefWidth="300.0">
+            <AnchorPane fx:id="si_loginForm" layoutX="300.0" prefHeight="400.0" prefWidth="300.0">
                <children>
                   <Label fx:id="login" layoutX="114.0" layoutY="30.0" prefHeight="30.0" prefWidth="72.0" text="Login">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="user" layoutX="19.0" layoutY="96.0" prefHeight="26.0" prefWidth="261.0" promptText="username" />
-                  <PasswordField fx:id="pass" layoutX="18.0" layoutY="151.0" prefHeight="26.0" prefWidth="262.0" promptText="password" styleClass="textfield" stylesheets="@../../../../java/com/example/moviefinal/login.css" />
+                  <TextField fx:id="si_username" layoutX="19.0" layoutY="96.0" prefHeight="26.0" prefWidth="261.0" promptText="username" />
+                  <PasswordField fx:id="si_password" layoutX="18.0" layoutY="151.0" prefHeight="26.0" prefWidth="262.0" promptText="password" />
                   <Button fx:id="loginbtn" layoutX="19.0" layoutY="301.0" mnemonicParsing="false" onAction="#loginBtn" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="34.0" prefWidth="250.0" style="  -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);     -fx-background-radius: 5px;     -fx-cursor: hand;     -fx-text-fill: #fff;     -fx-font-size: 12px; " text="Click To Login" />
                </children>
             </AnchorPane>
-         <AnchorPane fx:id="sign_form" layoutY="5.0" prefHeight="400.0" prefWidth="300.0" visible="false">
+         <AnchorPane fx:id="su_signupForm" layoutY="5.0" prefHeight="400.0" prefWidth="300.0" visible="false">
             <children>
                <Label layoutX="114.0" layoutY="30.0" prefHeight="30.0" prefWidth="72.0" text="Register">
                   <font>
                      <Font size="17.0" />
                   </font>
                </Label>
-               <Button fx:id="reg_btn1" layoutX="24.0" layoutY="298.0" mnemonicParsing="false" onAction="#registration" onMouseEntered="#handleMouseEntered_5" onMouseExited="#handleMouseExited_5" prefHeight="34.0" prefWidth="250.0" style="  -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);     -fx-background-radius: 5px;     -fx-cursor: hand;     -fx-text-fill: #fff;     -fx-font-size: 12px; " text="Click To Register" />
-               <TextField fx:id="reg_user" layoutX="24.0" layoutY="83.0" prefHeight="26.0" prefWidth="250.0" promptText="username" />
-               <PasswordField fx:id="reg_pass" layoutX="25.0" layoutY="130.0" prefHeight="26.0" prefWidth="250.0" promptText="password" />
-               <ComboBox fx:id="reg_ques" layoutX="25.0" layoutY="175.0" onAction="#reqQuestion" prefHeight="28.0" prefWidth="250.0" promptText="select a question" />
-               <TextField fx:id="reg_ans" layoutX="25.0" layoutY="216.0" prefHeight="26.0" prefWidth="250.0" promptText="type your answer here" />
+               <Button fx:id="su_signupBtn" layoutX="24.0" layoutY="298.0" mnemonicParsing="false" onAction="#regBtn" onMouseEntered="#handleMouseEntered_5" onMouseExited="#handleMouseExited_5" prefHeight="34.0" prefWidth="250.0" style="  -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);     -fx-background-radius: 5px;     -fx-cursor: hand;     -fx-text-fill: #fff;     -fx-font-size: 12px; " text="Click To Register" />
+               <TextField fx:id="su_username" layoutX="24.0" layoutY="83.0" prefHeight="26.0" prefWidth="250.0" promptText="username" />
+               <PasswordField fx:id="su_password" layoutX="25.0" layoutY="130.0" prefHeight="26.0" prefWidth="250.0" promptText="password" />
+               <ComboBox fx:id="su_question" layoutX="25.0" layoutY="175.0" onAction="#reqQuestion" prefHeight="28.0" prefWidth="250.0" promptText="select a question" />
+               <TextField fx:id="su_answer" layoutX="25.0" layoutY="216.0" prefHeight="26.0" prefWidth="250.0" promptText="type your answer here" />
             </children>
          </AnchorPane>
          </children>

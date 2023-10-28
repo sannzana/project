@@ -5,6 +5,7 @@ import java.time.Duration;
 
 public class moviesData {
 
+
     private String title;
     private String genre;
     private String duration;
