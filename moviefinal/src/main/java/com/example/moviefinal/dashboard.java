@@ -44,6 +44,8 @@ public class dashboard  implements Initializable {
 
     @FXML
     private TableColumn<moviesData,String> addMovie_col_genre;
+    @FXML
+    private TableColumn<moviesData,String> addMovie_col_director;
 
     @FXML
     private TableColumn<moviesData,String> addMovie_col_movieTitle;
@@ -94,7 +96,8 @@ public class dashboard  implements Initializable {
 
     @FXML
     private Spinner<?> availableMovie_NormalClass_quantity;
-
+    @FXML
+    private TextField addMovie_Director;
     @FXML
     private Label availableMovie_SpecialClass_pricr;
 
@@ -358,7 +361,7 @@ public class dashboard  implements Initializable {
 //public String c="helllo" username at the place of c;
   public void displayUsername()
   {
-    admin.setText(getData.c);
+    admin.setText(getData.username);
 
   }
 
@@ -432,7 +435,7 @@ private Image image;
 
     public ObservableList<moviesData> addMoviesList()
     { ObservableList<moviesData>listData= FXCollections.observableArrayList();
-        String sql="SELECT * FROM NAME";
+        String sql="SELECT * FROM moviee";
         connect=database.connectDB();
         try {
             prepare = connect.prepareStatement(sql);
@@ -440,7 +443,8 @@ private Image image;
             moviesData movD;
             while (result.next()) {
                 movD = new moviesData(result.getString("movieTitle"), result.getString("genre")
-                        , result.getString("duration"), result.getString("image"), result.getDate("date"));
+                        , result.getString("duration"), result.getString("image"), result.getDate("date"),
+                        result.getString("director"));
 
                 listData.add(movD);
             }
@@ -474,7 +478,7 @@ getData.path=file.getAbsolutePath();
     public void insertAddMovies()
     {
         // movie=??????????????????????????????????????
-        String sql1="SELECT * FROM movie WHERE movieTitle= '"
+        String sql1="SELECT * FROM moviee WHERE movieTitle= '"
                 + addMovie_title.getText()+"'";
         connect=database.connectDB();
         Alert alert;
@@ -496,7 +500,7 @@ getData.path=file.getAbsolutePath();
 
                 if(addMovie_title.getText().isEmpty()||
                 addMovie_genre.getText().isEmpty()||
-                addMovie_duration.getText().isEmpty()||
+                addMovie_duration.getText().isEmpty()||addMovie_Director.getText().isEmpty()||
                 addMovie_date.getValue()==null||
                 addMovie_imageview.getImage()==null)
                 {
@@ -522,6 +526,7 @@ getData.path=file.getAbsolutePath();
                     prepare.setString(3,addMovie_duration.getText());
                     prepare.setString(4,uri);
                     prepare.setString(5,String.valueOf(addMovie_date.getValue()));
+                    prepare.setString(6,addMovie_Director.getText());
 
 
                     prepare.execute();
@@ -554,6 +559,8 @@ getData.path=file.getAbsolutePath();
         addMovie_col_genre.setCellValueFactory(new PropertyValueFactory<>("genre"));
         addMovie_col_duration.setCellValueFactory(new PropertyValueFactory<>("duration"));
         addMovie_col_publishedDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        addMovie_col_director.setCellValueFactory(new PropertyValueFactory<>("director"));
+
 addMovie_tableView.setItems(listAddMovies);
 
 
@@ -627,9 +634,20 @@ public void minimize()
     stage.setIconified(true);
 
 }
+
+public void display()
+{
+
+}
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-displayUsername();
+       displayUsername();
+
+
+
+
 showAddMoviesList();
     }
 }

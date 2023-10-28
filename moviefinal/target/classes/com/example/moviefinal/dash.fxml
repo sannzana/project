@@ -199,28 +199,35 @@
                                     <Font size="13.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="2.0" layoutY="483.0" text="Published Date:">
+                              <Label layoutX="7.0" layoutY="483.0" text="Published Date:">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="addMovie_title" layoutX="99.0" layoutY="360.0" prefHeight="26.0" prefWidth="181.0" style="-fx-background-color: transparent; -fx-background-radius: 0px 5px 0px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 0px 5px 0px 0px;" />
-                              <TextField fx:id="addMovie_genre" layoutX="98.0" layoutY="398.0" prefHeight="26.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-background-radius: 0px 5px 0px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 0px 5px 0px 0px;" />
-                              <TextField fx:id="addMovie_duration" layoutX="98.0" layoutY="440.0" prefHeight="26.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-background-radius: 0px 5px 0px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 0px 5px 0px 0px;" />
+                              <TextField fx:id="addMovie_title" layoutX="109.0" layoutY="359.0" prefHeight="26.0" prefWidth="181.0" style="-fx-background-color: transparent; -fx-background-radius: 0px 5px 0px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 0px 5px 0px 0px;" />
+                              <TextField fx:id="addMovie_genre" layoutX="109.0" layoutY="397.0" prefHeight="26.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-background-radius: 0px 5px 0px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 0px 5px 0px 0px;" />
+                              <TextField fx:id="addMovie_duration" layoutX="109.0" layoutY="439.0" prefHeight="26.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-background-radius: 0px 5px 0px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 0px 5px 0px 0px;" />
                               <Button fx:id="addMovie_insertBtn" layoutX="11.0" layoutY="647.0" mnemonicParsing="false" onAction="#insertAddMovies" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: #189679; -fx-background-radius: 8px; -fx-text-fill: #fff; -fx-cursor:hand;" text="Insert" />
                               <Button fx:id="addMovie_updateBtn" layoutX="87.0" layoutY="647.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: #181e96; -fx-background-radius: 8px; -fx-text-fill: #fff; -fx-cursor:hand;" text="Update" />
                               <Button fx:id="addMovie_deleteBtn" layoutX="158.0" layoutY="647.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: #981c1c; -fx-background-radius: 8px; -fx-text-fill: #fff; -fx-cursor:hand;" text="Delete" />
                               <Button fx:id="addMovie_clearBtn" layoutX="225.0" layoutY="647.0" mnemonicParsing="false" onAction="#clearAddMovieList" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: #445653; -fx-background-radius: 8px; -fx-text-fill: #fff; -fx-cursor:hand;" text="Clear" />
-                              <DatePicker fx:id="addMovie_date" layoutX="99.0" layoutY="480.0" prefHeight="26.0" prefWidth="182.0" promptText="MM/DD/YYYY" style="-fx-background-color: transparent; -fx-background-radius: 0px 5px 0px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 0px 5px 0px 0px;" />
+                              <DatePicker fx:id="addMovie_date" layoutX="109.0" layoutY="479.0" prefHeight="26.0" prefWidth="182.0" promptText="MM/DD/YYYY" style="-fx-background-color: transparent; -fx-background-radius: 0px 5px 0px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 0px 5px 0px 0px;" />
+                              <TextField fx:id="addMovie_Director" layoutX="109.0" layoutY="522.0" prefHeight="26.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-background-radius: 0px 5px 0px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 0px 5px 0px 0px;" />
+                              <Label layoutX="2.0" layoutY="526.0" text="Director's Name :">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
                            </children></AnchorPane>
                         <AnchorPane layoutX="336.0" layoutY="11.0" prefHeight="715.0" prefWidth="897.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,.3),8,0,0,0); -fx-background-radius: 8px">
                            <children>
                               <TableView id="table" fx:id="addMovie_tableView" layoutX="6.0" layoutY="64.0" prefHeight="630.0" prefWidth="886.0" style="-fx-background-color: #f5faf8; -fx-background-radius: 10px; -fx-border-color: #4ccc9f; -fx-border-radius: 10px; -fx-fill:#fff;">
                                 <columns>
-                                  <TableColumn fx:id="addMovie_col_movieTitle" prefWidth="240.80001831054688" style="-fx-background-color:linear-gradient(to bottom right,#5ed0a7,#34ad82);-fx-text-fill: #fff; -fx-background-radius: 5px 0px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 0px 5px 0px;" text="Movie Title" />
-                                  <TableColumn fx:id="addMovie_col_genre" prefWidth="237.60009765625" style="-fx-background-color:linear-gradient(to bottom right,#34ad82,#15808a); -fx-text-fill: #fff;-fx-background-radius: 5px 0px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius:5px 0px 5px 0px;" text="Genre" />
-                                    <TableColumn fx:id="addMovie_col_duration" prefWidth="197.5999755859375" style="-fx-background-color:linear-gradient(to bottom right,#15808a,#0d6e77);-fx-text-fill: #fff; -fx-background-radius: 5px 0px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 0px 5px 0px;" text="Duration" />
-                                    <TableColumn fx:id="addMovie_col_publishedDate" prefWidth="208.0001220703125" style="-fx-background-color:linear-gradient(to bottom right,#0d6e77,#075c64); -fx-text-fill: #fff;-fx-background-radius: 5px 5px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 5px 5px 0px;" text="Published Date" />
+                                  <TableColumn fx:id="addMovie_col_movieTitle" prefWidth="185.60006713867188" style="-fx-background-color:linear-gradient(to bottom right,#5ed0a7,#34ad82);-fx-text-fill: #fff; -fx-background-radius: 5px 0px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 0px 5px 0px;" text="Movie Title" />
+                                  <TableColumn fx:id="addMovie_col_genre" prefWidth="159.20001220703125" style="-fx-background-color:linear-gradient(to bottom right,#34ad82,#15808a); -fx-text-fill: #fff;-fx-background-radius: 5px 0px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius:5px 0px 5px 0px;" text="Genre" />
+                                    <TableColumn fx:id="addMovie_col_duration" prefWidth="184.7999267578125" style="-fx-background-color:linear-gradient(to bottom right,#15808a,#0d6e77);-fx-text-fill: #fff; -fx-background-radius: 5px 0px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 0px 5px 0px;" text="Duration" />
+                                    <TableColumn fx:id="addMovie_col_publishedDate" prefWidth="159.2000732421875" style="-fx-background-color:linear-gradient(to bottom right,#0d6e77,#075c64); -fx-text-fill: #fff;-fx-background-radius: 5px 5px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 5px 5px 0px;" text="Published Date" />
+                                    <TableColumn fx:id="addMovie_col_director" prefWidth="192.0" style="-fx-background-color:linear-gradient(to bottom right,#0d6e77,#075c64); -fx-text-fill: #fff;-fx-background-radius: 5px 5px 5px 0px; -fx-border-color: #1e242e; -fx-border-width: 1px; -fx-border-radius: 5px 5px 5px 0px;" text="Director's Name" />
                                 </columns>
 
 
